@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block content %}
+
+<section class="section_developer">
+  <div class="container">
+    <div class="developer" style="display: block"></div>
+    <div class="developer">
+      <div class="box">
+        <img
+          src="static/CV-bilde Liten.png"
+          alt=""
+          style="border-radius: 50%; width: 100%"
+        />
+        <h3 style="margin-top: 20px">Sara Birkeland</h3>
+        <p>
+          <a
+            href="https://www.linkedin.com/in/sara-helen-birkeland-skjerping-34802521a/"
+            >LinkedIn</a
+          >
+        </p>
+        <div class="container_buttons_developer">
+          <a class="btn_developer" href="{{url_for('CV')}}" target="_blank"
+            >CV</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section_footer_developer">
+  <div class="container">
+    <div class="footer_developer">
+      <h4>Developer</h4>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

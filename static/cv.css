@@ -1,0 +1,9 @@
+/* .CV_bilde {
+    justify-content: center;
+}*/
+.section_footer_cv {
+    z-index: 1;
+}
+.CV_bilde img {
+    width: 10px !important;
+}

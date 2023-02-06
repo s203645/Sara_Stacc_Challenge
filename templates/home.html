@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+    <div class="header_home">
+      <div class="box">
+        <h1 style="font-size: 55px">
+          <span class="text-logo"> Sammenlign strømleverandører</span>
+        </h1>
+
+        <h2>Ditt strømforbruk de siste 500 timene (kWh)</h2>
+
+        <div id="graph"></div>
+        <script>
+            var trace1 = {
+              x: {{ labels|safe }},
+              y: {{ values|safe }},
+              type: "bar"
+            };
+            var data = [trace1];
+            var layout = {
+              plot_bgcolor: '#f2f2f2',
+              paper_bgcolor: '#f2f2f2'
+          };
+          Plotly.newPlot("graph", data, layout);
+        </script>
+      </div>
+      <h2>Den billigste strømleverandøren for deg er markert grønn</h2>
+      <div class="container-box">
+        {%for i in provider%} {% if i["total_consumption"] == 1260 %}
+        <div id="min-price">
+          <li>{{i['name']}}</li>
+          <br />
+          <li id="line-small">{{i['pricingModel']}}</li>
+          <li id="line-small">
+            Estimated monthly price: kr {{i["total_consumption"]}},-
+          </li>
+        </div>
+        {%else%}
+        <div id="box">
+          <li>{{i['name']}}</li>
+          <br />
+          <li id="line-small">{{i['pricingModel']}}</li>
+          <li id="line-small">
+            Estimated monthly price: kr {{i["total_consumption"]}},-
+          </li>
+        </div>
+        {% endif %} {%endfor%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
