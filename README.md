@@ -1,6 +1,10 @@
 # Sara_Stacc_Challenge
-## My app is running as a docker container on a linux vm on linode.
-## To run the docker image you can pull it from my docker hub repo
+
+This is an application that displays the consumer's energy consumption for the past 500 hours. Then, based on this information, the application calculates which power provider that is the cheapest for this consumer to use. The cheapest power provider will appear in a green box. The others appear in red boxes. The boxes also contain information about the estimated monthly payment per power provider.
+
+## My app is running as a docker container on a Linux VM on Linode.
+### The IP address to the website can be found in the mail I sent you. I didn't have time to set up a domain name. Maybe next time :) 
+## To run the docker image you can pull it from my docker hub repo:
 https://hub.docker.com/repository/docker/sarabirkeland/stacchallenge
 
 ### Command for pulling docker image
