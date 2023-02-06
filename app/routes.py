@@ -1,12 +1,7 @@
-from flask import Flask, render_template
+from flask import render_template
+from app import app
 import urllib.request, json
-import matplotlib.pyplot as plt
-import io
-import base64
-import matplotlib.dates as mdates
-import pandas as pd
 
-application = Flask(__name__)
 
 url1 = "https://future-of-fintech-v2023.vercel.app/api/consumption"
 url2 = "https://future-of-fintech-v2023.vercel.app/api/providers"
@@ -28,8 +23,8 @@ for i in dict1:
     time.append(i["from"][8:13])
 
 
-@application.route("/")
-@application.route("/home")
+@app.route("/")
+@app.route("/home")
 def home():
     url = "https://future-of-fintech-v2023.vercel.app/api/providers"
     response = urllib.request.urlopen(url)
@@ -51,15 +46,11 @@ def home():
     )
 
 
-@application.route("/developer")
+@app.route("/developer")
 def developer():
     return render_template("developer.html", title="Developer")
 
 
-@application.route("/CV")
+@app.route("/CV")
 def CV():
     return render_template("cv.html", title="CV")
-
-
-if __name__ == "__main__":
-    application.run(debug=True, port=5000)
