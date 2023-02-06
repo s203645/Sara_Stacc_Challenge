@@ -29,3 +29,5 @@ docker pull "name of image"
 ```
 docker run -d -p 80:80 "name of image"
 ```
+
+Forgot to remove debug=True
